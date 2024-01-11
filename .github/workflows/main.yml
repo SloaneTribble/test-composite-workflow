@@ -14,5 +14,5 @@ jobs:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
-      - run: echo ${{ steps.foo.outputs.INPUT_WHO_TO_GREET }}
+      - run: echo ${{ steps.foo.outputs.GREETING }}
   
