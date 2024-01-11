@@ -1,0 +1,20 @@
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  hello_world_job:
+    runs-on: self-hosted
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v4
+      - id: foo
+        uses: SloaneTribble/composite-workflow@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
+  
+  run_self_hosted:
+    uses: ./.github/workflows/getting-started.yml
+        
