@@ -15,6 +15,3 @@ jobs:
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
   
-  run_self_hosted:
-    uses: ./.github/workflows/getting-started.yml
-        
